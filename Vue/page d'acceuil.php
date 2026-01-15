@@ -237,6 +237,25 @@
             margin-bottom: 15px;
             color: var(--dark);
         }
+ /* CAROUSEL */
+.carousel{
+    max-width:1000px;
+    margin:auto;
+    overflow:hidden;
+    border-radius:10px;
+}
+.slides{
+    display:flex;
+    transition:0.6s ease;
+}
+.slide{
+    min-width:100%;
+}
+.slide img{
+    width:100%;
+    height:600px;
+    object-fit:cover;
+}
 
         /* Contact Section */
         .contact-section {
@@ -465,7 +484,18 @@
             </div>
         </div>
     </section>
-
+    <!-- CAROUSEL -->
+<section class="section">
+<div class="carousel">
+    <marquee behavior="scroll" direction="left">
+<div class="slides" id="slides">
+<div class="slide"><img src="C:\Users\GABRIEL\Desktop\IMG-20260114-WA0142.jpg"></div>
+<div class="slide"><img src="C:\Users\GABRIEL\Desktop\IMG-20260114-WA0144.jpg"></div>
+<div class="slide"><img src="C:\Users\GABRIEL\Desktop\IMG-20260114-WA0141.jpg"></div>
+<div class="slide"><img src="C:\Users\GABRIEL\Desktop\trouver-meilleure-strategie-pour-leur-entreprise-photo-recadree-homme-affaires-mature-faisant-presentation-dans-salle-reunion_590464-21489.jpg"></div>
+    </marquee>
+    </div>
+    </section>
     <!-- Services Section -->
     <section id="services" class="services-section">
         <div class="container">
