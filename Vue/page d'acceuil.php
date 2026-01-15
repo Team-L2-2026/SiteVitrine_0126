@@ -333,7 +333,17 @@
             transform: translateY(-3px);
             box-shadow: 0 10px 20px rgba(37, 99, 235, 0.3);
         }
-
+/* RÉSEAUX SOCIAUX */
+.socials{
+    text-align:center;
+    margin-top:20px;
+}
+.socials a{
+    margin:10px;
+    font-size:22px;
+    text-decoration:none;
+    color:#002b5b;
+}
         /* Footer */
         footer {
             background: var(--dark);
@@ -594,6 +604,13 @@
                 </div>
             </div>
         </div>
+        <!-- RÉSEAUX SOCIAUX -->
+<div class="socials">
+<a href="https://facebook.com" target="_blank">🌐 Facebook</a>
+<a href="https://linkedin.com" target="_blank">💼 LinkedIn</a>
+<a href="https://twitter.com" target="_blank">🐦 Twitter</a>
+<a href="https://instagram.com" target="_blank">📸 Instagram</a>
+</div>
     </section>
 
     <!-- Footer -->
