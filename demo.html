@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TechSolutions Pro | Démo GitHub</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #2563eb;
+            --secondary: #1e293b;
+            --accent: #3b82f6;
+            --light: #f8fafc;
+            --gray: #64748b;
+            --success: #10b981;
+            --warning: #f59e0b;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #f1f5f9 0%, #e2e8f0 100%);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1000px;
+            width: 100%;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            margin: 20px;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
+            color: white;
+            padding: 40px;
+            text-align: center;
+        }
+        
+        .logo {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+        }
+        
+        .logo i {
+            font-size: 3rem;
+            color: white;
+        }
+        
+        .tagline {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            margin-top: 10px;
+        }
+        
+        .demo-notice {
+            background: linear-gradient(135deg, #fffbeb 0%, #fef3c7 100%);
+            border-left: 5px solid var(--warning);
+            padding: 30px;
+            margin: 30px;
+            border-radius: 15px;
+            position: relative;
+        }
+        
+        .demo-notice h2 {
+            color: #92400e;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .demo-notice h2 i {
+            color: var(--warning);
+        }
+        
+        .steps {
+            background: var(--light);
+            padding: 25px;
+            border-radius: 12px;
+            margin: 25px 0;
+            border: 2px solid #e2e8f0;
+        }
+        
+        .steps ol {
+            padding-left: 20px;
+            margin-top: 15px;
+        }
+        
+        .steps li {
+            margin-bottom: 15px;
+            padding-left: 10px;
+            color: var(--secondary);
+        }
+        
+        .steps li strong {
+            color: var(--primary);
+        }
+        
+        .code-block {
+            background: var(--secondary);
+            color: white;
+            padding: 15px;
+            border-radius: 8px;
+            font-family: 'Courier New', monospace;
+            margin: 10px 0;
+            font-size: 0.95rem;
+            overflow-x: auto;
+        }
+        
+        .download-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: var(--primary);
+            color: white;
+            text-decoration: none;
+            padding: 15px 30px;
+            border-radius: 10px;
+            font-weight: 600;
+            margin-top: 20px;
+            transition: all 0.3s ease;
+        }
+        
+        .download-btn:hover {
+            background: var(--accent);
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(37, 99, 235, 0.3);
+        }
+        
+        .screenshot-section {
+            padding: 40px;
+            text-align: center;
+        }
+        
+        .screenshot-title {
+            color: var(--secondary);
+            margin-bottom: 30px;
+            font-size: 1.8rem;
+        }
+        
+        .screenshot-placeholder {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 15px;
+            padding: 60px;
+            color: white;
+            margin: 0 auto;
+            max-width: 800px;
+        }
+        
+        .screenshot-placeholder i {
+            font-size: 4rem;
+            margin-bottom: 20px;
+        }
+        
+        .tech-stack {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 30px;
+            flex-wrap: wrap;
+        }
+        
+        .tech-item {
+            background: var(--light);
+            padding: 10px 20px;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            color: var(--primary);
+            border: 2px solid var(--primary);
+            font-weight: 500;
+        }
+        
+        .footer {
+            text-align: center;
+            padding: 30px;
+            color: var(--gray);
+            font-size: 0.9rem;
+            border-top: 1px solid #e2e8f0;
+            margin-top: 20px;
+        }
+        
+        .github-link {
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 600;
+        }
+        
+        .github-link:hover {
+            text-decoration: underline;
+        }
+        
+        @media (max-width: 768px) {
+            .container {
+                margin: 10px;
+            }
+            
+            .header {
+                padding: 30px 20px;
+            }
+            
+            .logo {
+                font-size: 2rem;
+                flex-direction: column;
+                gap: 10px;
+            }
+            
+            .demo-notice {
+                margin: 20px;
+                padding: 20px;
+            }
+            
+            .screenshot-section {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- En-tête -->
+        <div class="header">
+            <div class="logo">
+                <i class="fas fa-laptop-code"></i>
+                TechSolutions Pro
+            </div>
+            <p class="tagline">
+                Solution de gestion IT complète - PHP/MySQL Full Stack
+            </p>
+        </div>
+        
+        <!-- Notice Démo -->
+        <div class="demo-notice">
+            <h2>
+                <i class="fas fa-info-circle"></i>
+                Version Démo Statique
+            </h2>
+            <p>
+                Ceci est une version de démonstration statique. Le projet complet utilise 
+                <strong>PHP 8+</strong> et <strong>MySQL</strong> avec une architecture MVC.
+            </p>
+            
+            <div class="steps">
+                <h3>Pour tester la version fonctionnelle :</h3>
+                <ol>
+                    <li>
+                        <strong>Téléchargez tous les fichiers</strong> depuis le dépôt GitHub
+                    </li>
+                    <li>
+                        <strong>Importez la base de données</strong> 
+                        <div class="code-block">mysql -u root -p techsolutions_db < database/techsolutions_db.sql</div>
+                    </li>
+                    <li>
+                        <strong>Configurez un serveur web</strong> avec PHP (XAMPP, WAMP, MAMP)
+                    </li>
+                    <li>
+                        <strong>Accédez aux interfaces</strong> :
+                        <div style="display: flex; gap: 10px; margin-top: 10px; flex-wrap: wrap;">
+                            <span style="background: var(--primary); color: white; padding: 5px 15px; border-radius: 5px; font-size: 0.9rem;">
+                                /client/index.php
+                            </span>
+                            <span style="background: var(--secondary); color: white; padding: 5px 15px; border-radius: 5px; font-size: 0.9rem;">
+                                /admin/dashboard.php
+                            </span>
+                        </div>
+                    </li>
+                </ol>
+            </div>
+            
+            <a href="https://github.com/Team-L2-2026/SiteVitrine_0126.git" class="download-btn">
+                <i class="fab fa-github"></i>
+                Voir le Code Source sur GitHub
+            </a>
+        </div>
+        
+        <!-- Capture d'écran -->
+        <div class="screenshot-section">
+            <h2 class="screenshot-title">Aperçu du Projet</h2>
+            <div class="screenshot-placeholder">
+                <i class="fas fa-laptop"></i>
+                <h3>Interface Client & Dashboard Admin</h3>
+                <p>Le projet inclut deux interfaces complètes avec fonctionnalités CRUD</p>
+                
+                <div class="tech-stack">
+                    <div class="tech-item">PHP 8+</div>
+                    <div class="tech-item">MySQL</div>
+                    <div class="tech-item">JavaScript</div>
+                    <div class="tech-item">API REST</div>
+                    <div class="tech-item">Architecture MVC</div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Pied de page -->
+        <div class="footer">
+            <p>
+                Projet académique - Développement Web Avancé
+                <br>
+                <span style="color: var(--primary); font-weight: 600;">Année 2024</span>
+            </p>
+            <p style="margin-top: 15px;">
+                <a href="https://github.com/Team-L2-2026/SiteVitrine_0126.git" class="github-link">
+                    <i class="fab fa-github"></i> Dépôt GitHub
+                </a>
+                | 
+                <span style="color: var(--gray);">
+                    <i class="fas fa-code"></i> Développé avec PHP/MySQL
+                </span>
+            </p>
+        </div>
+    </div>
+    
+    <script>
+        // Animation simple pour le bouton
+        document.querySelector('.download-btn').addEventListener('mouseenter', function() {
+            this.style.transform = 'translateY(-3px)';
+        });
+        
+        document.querySelector('.download-btn').addEventListener('mouseleave', function() {
+            this.style.transform = 'translateY(0)';
+        });
+        
+        // Effet de survol pour les éléments tech
+        document.querySelectorAll('.tech-item').forEach(item => {
+            item.addEventListener('mouseenter', function() {
+                this.style.transform = 'scale(1.05)';
+                this.style.transition = 'transform 0.2s ease';
+            });
+            
+            item.addEventListener('mouseleave', function() {
+                this.style.transform = 'scale(1)';
+            });
+        });
+    </script>
+</body>
+</html>
